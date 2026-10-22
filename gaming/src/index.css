@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #f2f4f8;
+  background: #090a10;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  scroll-behavior: smooth;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+::selection { color: #090a10; background: #66f5ff; }
+body { background: #090a10; }
+
+.display-font { font-family: 'Space Grotesk', sans-serif; }
+.glass {
+  background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+  border: 1px solid rgba(255,255,255,.11);
+  box-shadow: 0 20px 70px rgba(0,0,0,.18);
+  backdrop-filter: blur(18px);
+}
+.text-gradient {
+  color: transparent;
+  background: linear-gradient(100deg, #f4f5f9 5%, #70f4ff 53%, #ff65ac 98%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.neon-shadow { box-shadow: 0 0 24px rgba(102,245,255,.22), inset 0 0 18px rgba(102,245,255,.05); }
+.pink-shadow { box-shadow: 0 0 25px rgba(255,77,152,.25); }
+.section-wrap { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+.grid-fade {
+  background-image: linear-gradient(rgba(102,245,255,.075) 1px, transparent 1px), linear-gradient(90deg, rgba(102,245,255,.075) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 70%, transparent);
+}
+.scrollbar-none { scrollbar-width: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
+
+.palm {
+  position: absolute;
+  bottom: 90px;
+  width: 100px;
+  height: 145px;
+  opacity: .8;
+  filter: drop-shadow(0 0 12px rgba(255, 77, 152, .35));
+}
+.palm-left { left: 8%; transform: rotate(-8deg) scale(.86); }
+.palm-right { right: 6%; transform: rotate(9deg) scale(1.12); }
+.palm span {
+  position: absolute;
+  left: 49px;
+  top: 37px;
+  width: 4px;
+  height: 120px;
+  border-radius: 100%;
+  background: linear-gradient(#ff70b6, #8424a8 70%, transparent);
+  transform: rotate(8deg);
+}
+.palm i, .palm b {
+  position: absolute;
+  left: 50px;
+  top: 39px;
+  width: 72px;
+  height: 24px;
+  border-top: 3px solid #ff72b6;
+  border-radius: 100% 0 0;
+  transform-origin: left center;
+}
+.palm i { transform: rotate(-145deg); }
+.palm b { transform: rotate(-35deg) scaleX(-1); }
+.palm::before, .palm::after {
+  content: '';
+  position: absolute;
+  left: 50px;
+  top: 39px;
+  width: 70px;
+  height: 24px;
+  border-top: 3px solid #b74ed1;
+  border-radius: 100% 0 0;
+  transform-origin: left center;
+}
+.palm::before { transform: rotate(-100deg); }
+.palm::after { transform: rotate(5deg) scaleX(-1); }
+
+.game-art { isolation: isolate; background-color: #171827; }
+.game-art-image { z-index: 0; }
+.game-art-overlay { z-index: 1; background: linear-gradient(180deg, rgba(6,8,16,.1), transparent 38%, rgba(7,8,14,.68)); }
+.game-art.spider {
+  background: radial-gradient(ellipse at 70% 34%, #fa557e 0, #6e226b 20%, transparent 48%), linear-gradient(135deg, #10131f 15%, #182c50 54%, #14111f);
+}
+.game-art.spider::before {
+  content: '';
+  position: absolute;
+  inset: -30%;
+  background: repeating-linear-gradient(125deg, transparent 0 34px, rgba(122,218,255,.18) 35px 36px, transparent 37px 69px);
+  transform: rotate(-16deg);
+  mask-image: radial-gradient(ellipse at 60% 48%, black, transparent 67%);
+}
+.game-art.wwe {
+  background: radial-gradient(ellipse at 50% 60%, rgba(255,191,73,.85), transparent 13%), radial-gradient(ellipse at 50% 68%, #bb204d, transparent 32%), linear-gradient(140deg, #11131c, #33202b 53%, #11131c);
+}
+.game-art.wwe::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(105deg, transparent 0 18%, rgba(255,255,255,.45) 19%, transparent 20% 34%);
+  opacity: .3;
+  mask-image: linear-gradient(to bottom, black, transparent 65%);
+}
+.game-art.racing {
+  background: radial-gradient(ellipse at 58% 75%, rgba(255,76,133,.65), transparent 36%), linear-gradient(145deg, #111725, #182142 50%, #101019);
+}
+.game-art.racing::before {
+  content: '';
+  position: absolute;
+  inset: 52% -20% -35%;
+  background: repeating-linear-gradient(170deg, transparent 0 26px, rgba(101,239,255,.35) 27px 29px, transparent 30px 50px);
+  transform: perspective(180px) rotateX(40deg);
+}
+.game-art.gta {
+  background: radial-gradient(ellipse at 52% 52%, #ff9d80, #bd4b89 27%, transparent 57%), linear-gradient(180deg, #192745 0%, #3f2251 54%, #10131d 100%);
+}
+.game-art.gta::before {
+  content: '';
+  position: absolute;
+  inset: 47% 0 0;
+  background: linear-gradient(180deg, transparent, #11131c 72%), linear-gradient(90deg, #171923 2%, transparent 3% 10%, #161821 11% 16%, transparent 17% 29%, #171923 30% 34%, transparent 35% 47%, #181923 48% 54%, transparent 55% 67%, #161821 68% 73%, transparent 74%);
+}
+.game-art.tekken {
+  background: radial-gradient(ellipse at 50% 50%, #fc513d, #682571 23%, transparent 52%), linear-gradient(145deg, #131023, #212044 53%, #0e1019);
+}
+.game-art.tekken::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(115deg, transparent 0 27px, rgba(198,156,255,.28) 28px 30px, transparent 31px 55px);
+  mask-image: radial-gradient(ellipse, black, transparent 70%);
+}
+.game-art.fc {
+  background: radial-gradient(ellipse at 51% 80%, rgba(78,255,176,.45), transparent 30%), linear-gradient(160deg, #14211f, #133d36 56%, #0f171b);
+}
+.game-art.fc::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(83deg, transparent 0 12%, rgba(227,255,229,.62) 12.2% 12.4%, transparent 12.6% 23%), linear-gradient(180deg, transparent 28%, rgba(154,255,213,.2) 29%, transparent 30%);
+  opacity: .35;
+}
+
+@media (max-width: 640px) {
+  .section-wrap { width: min(100% - 32px, 1180px); }
+  .palm { opacity: .55; transform-origin: bottom; }
+}
